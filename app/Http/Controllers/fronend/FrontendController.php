@@ -7,14 +7,23 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\FromField;
+use App\Models\Submission;
 use App\Models\Template;
 
 class FrontendController extends Controller
 {
     public function index(){
         $data['organizations'] = Organization::get();
+        if (auth()->user()) {
+            $data['submissions'] = Submission::where('user_id', auth()->user()->id)->get();
+        } else {
+            $data['submissions'] = [];
+        }
         return view('frontend.home',$data);
     }
+
+
+
 
     public function categories(Request $request)
     {

@@ -62,6 +62,16 @@
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <a href="javascript: void(0);" class="waves-effect">
+                        <i class="fa-solid fa-copy text-info"></i>
+                        <span key="t-dashboards">Show user information </span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('submission.list') }}" key="t-horizontal"> list</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <!-- Sidebar -->

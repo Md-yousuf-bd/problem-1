@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\FromFieldController;
 use App\Http\Controllers\Admin\OrganizationController;
 use App\Http\Controllers\Admin\TemplateController;
 use App\Http\Controllers\fronend\FrontendController;
+use App\Http\Controllers\fronend\SubmissionController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +26,12 @@ Route::namespace('frontend')->group(function () {
     Route::get('/getCategories/{organization_id}', [FrontendController::class, 'categories'])->name('getCategories');
     Route::get('/getTemplate/{category_id}', [FrontendController::class, 'getTemplate'])->name('getTemplate');
     Route::get('/getField/{template_id}', [FrontendController::class, 'getField'])->name('getField');
+    //submission
+    Route::get('/submission/list', [SubmissionController::class, 'index'])->name('submission.list');
+    Route::post('/submission/create/store', [SubmissionController::class, 'store'])->name('submission.store');
+    // Route::get('/submission/edit/{id}', [SubmissionController::class, 'edit'])->name('submission.edit');
+    // Route::put('/submission/update/{id}', [SubmissionController::class, 'update'])->name('submission.update');
+    Route::get('/submission/delete/{id}', [SubmissionController::class, 'destroy'])->name('submission.delete');
 });
 // admin route
 Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {

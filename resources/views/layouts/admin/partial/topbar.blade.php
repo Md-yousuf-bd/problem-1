@@ -8,7 +8,7 @@
 
                 </a>
 
-                <a href="" class="logo logo-light">
+                <a href="/" class="logo logo-light">
                     <span class="logo-sm">
                         <img src="{{ asset('assets/image/favicon.png') }}" alt="" height="22">
                     </span>

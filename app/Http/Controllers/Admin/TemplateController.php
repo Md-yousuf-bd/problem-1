@@ -28,7 +28,7 @@ class TemplateController extends Controller
         $record->category_id = request('category_id');
         $record->description = request('description');
         $record->save();
-        return redirect()->route('category.list')->with('message','Successfully  Create');
+        return redirect()->route('template.list')->with('message','Successfully  Create');
     }
 
     //temp edit
